@@ -10,4 +10,7 @@ def carregar_base():
 
 base_df = carregar_base()
 
+st.title("Dash de Exemplo para o Fino")
+
 st.dataframe(base_df)
+
