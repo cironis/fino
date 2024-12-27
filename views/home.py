@@ -12,5 +12,12 @@ base_df = carregar_base()
 
 st.title("Dash de Exemplo para o Fino")
 
-st.dataframe(base_df)
+columns_with_tab = [col for col in base_df.columns if "TAB" in col]
+
+coluna_dados = st.multiselect("Selecione a coluna de Dados", columns_with_tab)
+
+grouby_data = base_df.groupby(["ADMIN","DT_COMPTC"])[coluna_dados].sum()
+
+st.dataframe(grouby_data)
+
 
