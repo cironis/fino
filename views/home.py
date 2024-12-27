@@ -22,6 +22,6 @@ columns_with_tab = [col for col in base_df.columns if "TAB" in col]
 
 coluna_dados_select = st.multiselect("Selecione a coluna de Dados", columns_with_tab)
 
-grouby_data = base_df.groupby(["ADMIN","DT_COMPTC"])[coluna_dados_select].sum().reset_index()
+grouby_data = base_df.groupby(["DENOM_SOCIAL","DT_COMPTC"])[coluna_dados_select].sum().reset_index()
 
 st.dataframe(grouby_data,hide_index=True,use_container_width=True)
