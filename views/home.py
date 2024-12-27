@@ -12,12 +12,16 @@ base_df = carregar_base()
 
 st.title("Dash de Exemplo para o Fino")
 
+admins = base_df["ADMIN"].unique()
+
+admins_select = st.selectbox("Selecione o Admin", admins)
+
+base_df = base_df.loc[base_df["ADMIN"] == admins_select]
+
 columns_with_tab = [col for col in base_df.columns if "TAB" in col]
 
-coluna_dados = st.multiselect("Selecione a coluna de Dados", columns_with_tab)
+coluna_dados_select = st.multiselect("Selecione a coluna de Dados", columns_with_tab)
 
-grouby_data = base_df.groupby(["ADMIN","DT_COMPTC"])[coluna_dados].sum().reset_index()
+grouby_data = base_df.groupby(["ADMIN","DT_COMPTC"])[coluna_dados_select].sum().reset_index()
 
 st.dataframe(grouby_data,hide_index=True,use_container_width=True)
-
-
