@@ -39,7 +39,7 @@ fig = px.bar(
     grouby_graph,
     x="DENOM_SOCIAL",  # X-axis
     y=coluna_grafico_select,  # Y-axis is user-selected
-    title=f"Bar Graph of {coluna_grafico_select} by DENOM_SOCIAL",
+    title=f"Gráfico da Coluna {coluna_grafico_select}",
     labels={"DENOM_SOCIAL": "Denominação Social", coluna_grafico_select: "Valor"},
     text_auto=True  # Automatically add text labels to bars
 )
