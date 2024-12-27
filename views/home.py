@@ -18,6 +18,6 @@ coluna_dados = st.multiselect("Selecione a coluna de Dados", columns_with_tab)
 
 grouby_data = base_df.groupby(["ADMIN","DT_COMPTC"])[coluna_dados].sum()
 
-st.dataframe(grouby_data,hide_index=True,use_conteiner_width=True)
+st.dataframe(grouby_data,hide_index=True,use_container_width=True)
 
 
